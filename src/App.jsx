@@ -1,11 +1,15 @@
-
+import Layout from "./components/Layout/Layout"
+import Router from "./components/Route"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
 
   return (
     <>
-      <div className="text-[50px]">test</div>
+      <Layout>
+        <Router />
+      </Layout>
     </>
   )
 }
