@@ -25,16 +25,19 @@ html{
     margin-right: -150px;
     
 }
+img{
+    object-fit: cover;
+}
 .bg-right-alt{
     transform: rotate(-25deg);
     height: 150vh;
 }
 @keyframes image{
     from{
-        transform: translateY(-50px);
+        transform: scale(1.09);
     }
     to{
-        transform:translateY(0px);
+        transform:scale(1);
     }
 }
 @keyframes image2{

@@ -16,7 +16,7 @@ const Home = () => {
                 </h1>
                 <p className='text-[32px] text-[#fff] mt-[20px]'>Don’t wait in the shop!</p>
                 <div className="search mt-[50px] w-[500px] ">
-                  <input type="text" className='bg-[#BBA68F] w-full m-0 rounded-[12px] pt-[15px] pb-[15px] pl-[20px] pr-[20px] bottom-0 outline-0 placeholder:text-[#fff] placeholder:opacity-[.75]' placeholder='Find takeaway shops on your way' />
+                  <input type="text" className='bg-[#533009] text-[#fff] w-full m-0 rounded-[12px] pt-[15px] pb-[15px] pl-[20px] pr-[20px] bottom-0 outline-0 placeholder:text-[#fff] placeholder:opacity-[.55] placeholder:italic' placeholder='Find takeaway shops on your way' />
                 </div>
               </div>
             </Col>
@@ -31,7 +31,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      <section id="2" className='mt-[70px] '>
+      <section id="2" className='mt-[100px] mb-[170px]'>
         <Container className='bg-[#936532] rounded-[48px] pt-[30px] pb-[30px]'>
           <div className="text flex flex-col items-center justify-center mb-[50px]">
             <h1 className='text-[42px] font-[600] text-[#fff]'>How Taky works?</h1>
@@ -44,7 +44,7 @@ const Home = () => {
                   <img src={map} alt="" />
                 </div>
                 <div className="center pb-[20px]">
-                  <h3 className='text-[#fff] text-[24px]'>Enter your location</h3>
+                  <h3 className='text-[#fff] text-[24px] font-[500]'>Enter your location</h3>
                   
                 </div>
                 <div className="bottom pl-[50px] pr-[50px]">
@@ -58,7 +58,7 @@ const Home = () => {
                   <img src={coffe_w} alt="" />
                 </div>
                 <div className="center pb-[20px]">
-                  <h3 className='text-[#fff] text-[24px]'>Choose your takeaway shop</h3>
+                  <h3 className='text-[#fff] text-[24px] font-[500]'>Choose your takeaway shop</h3>
                   
                 </div>
                 <div className="bottom ">
@@ -72,7 +72,7 @@ const Home = () => {
                   <img src={hand} alt="" />
                 </div>
                 <div className="center pb-[20px]">
-                  <h3 className='text-[#fff] text-[24px]'>Pay and get your drink</h3>
+                  <h3 className='text-[#fff] text-[24px] font-[500]'>Pay and get your drink</h3>
                   
                 </div>
                 <div className="bottom">
