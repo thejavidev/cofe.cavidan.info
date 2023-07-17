@@ -25,6 +25,7 @@ html{
     margin-right: -150px;
     
 }
+
 img{
     object-fit: cover;
 }
@@ -99,4 +100,28 @@ img{
     border-bottom: 1px solid #000;
     background-color: transparent;
     border-radius: 0;
+}
+
+@media screen and (max-width:1299px) {
+    .bg-right{
+        transform: rotate(0deg);
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .bg-right-alt{
+        transform: rotate(0deg);
+    }
+}
+@media screen and (max-width:991px){
+    .bg-right .image{
+        width: 250px;
+        animation: none;
+    }
+    .bg-right .beans{
+        width: 150px;
+        animation: none;
+    }
+    .bg-right-alt{
+        height: 40vh;
+    }
 }
