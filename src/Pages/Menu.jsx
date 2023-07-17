@@ -703,7 +703,7 @@ const Menu = () => {
 
   return (
     <>
-      <div>
+      <div className='bg-[#f6f6f6]'>
         <section>
           <Container fluid className='pl-[50px] pr-[50px] xl:pl-[20px] xl:pr-[20px]'>
             <Row>
@@ -756,7 +756,7 @@ const Menu = () => {
                     <Swiper
 
                       spaceBetween={10}
-
+                      slidesPerView={5}
                       modules={[Navigation]}
                       navigation={{
                         nextEl: ".prev",
@@ -780,7 +780,10 @@ const Menu = () => {
                         1024: {
                           slidesPerView: 4,
                         },
-                        1299: {
+                        1366:{
+                          slidesPerView: 4,
+                        },
+                        1499: {
                           slidesPerView: 5,
                         },
                       }}
@@ -820,7 +823,7 @@ const Menu = () => {
 
                   <div className=''>
                     <Swiper
-                     
+                       slidesPerView={5}
                       spaceBetween={10}
                       modules={[Navigation]}
                       navigation={{
@@ -845,7 +848,10 @@ const Menu = () => {
                         1024: {
                           slidesPerView: 4,
                         },
-                        1299: {
+                        1366:{
+                          slidesPerView: 4,
+                        },
+                        1499: {
                           slidesPerView: 5,
                         },
                       }}
@@ -887,6 +893,7 @@ const Menu = () => {
                     <Swiper
                    
                       spaceBetween={10}
+                      slidesPerView={5}
                       modules={[Navigation]}
                       navigation={{
                         nextEl: ".prev2",
@@ -910,7 +917,10 @@ const Menu = () => {
                         1024: {
                           slidesPerView: 4,
                         },
-                        1299: {
+                        1366:{
+                          slidesPerView: 4,
+                        },
+                        1499: {
                           slidesPerView: 5,
                         },
                       }}

@@ -8,24 +8,24 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <>
-      <div className='bg-[#331C00]'>
-        <section className="section-1 h-[850px] lg:h-[400px] md:h-full md:pt-[40px]  flex items-center overflow-hidden">
+      <div className=''>
+        <section className="  md:h-full md:pt-[40px]  flex items-center overflow-hidden ">
           <Container fluid>
             <Row className='items-center'>
-              <Col lg={6} md={6} className='pl-[150px] xl:pl-[40px]'>
-                <div className="flex items-start md:items-center md:justify-center justify-start h-full  flex-col">
-                  <h1 className='text-[#fff] text-[72px] font-[600] xl:text-[42px] md:text-center'>Make your day <br />with coffee
+              <Col xl={6} lg={6} md={12} className='pl-[150px] xl:pl-[40px] lg:pl-[0]'>
+                <div className="flex items-start lg:items-center lg:justify-center justify-start h-full  flex-col">
+                  <h1 className='text-[#fff] text-[72px] font-[600] xl:text-[62px] lg:text-center text-13'>Make your day <br />with coffee
                   </h1>
                   <p className='text-[32px] xl:text-[25px] text-[#fff] mt-[20px]'>Don’t wait in the shop!</p>
-                  <div className="search mt-[50px]">
+                  <div className="search pt-[50px]">
                     <Link to='/menu' className='bg-[#936532]  text-[#fff] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[20px] rounded-[10px] capitalize'>
                       Cofeshoplar
                     </Link>
                   </div>
                 </div>
               </Col>
-              <Col lg={6} md={6} className='bg-[--bg] bg-right md:bg-transparent'>
-                <div className="flex items-center justify-start md:justify-center relative bg-right-alt">
+              <Col xl={6} lg={6} md={12} className=' bg-right'>
+                <div className="flex items-center justify-start lg:justify-center relative bg-right-alt">
                   <div className="relative flex items-center justify-center">
                     <img className='image' src={coffee2} alt="" />
                     <img className='beans' src={beans2} alt="" />

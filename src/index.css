@@ -12,27 +12,32 @@
     --bg:rgba(147, 101, 50,.55);
 }
 body{
-    background: #f6f6f6;
+    background: #331C00;
 }
 
 html{
     overflow-x: hidden;
 }
 .bg-right{
-  
+   position: relative;
+}
+.bg-right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+   
+    top: -150px;
+    left: 100px;
+    right: 0px;
+    bottom: 0;
+    height: 1500px;
+    background: #936532;
     transform: rotate(25deg);
-    margin-left: 150px;
-    margin-right: -150px;
-    
 }
-
-img{
+/* img{
     object-fit: cover;
-}
-.bg-right-alt{
-    transform: rotate(-25deg);
-    height: 150vh;
-}
+} */
+
 @keyframes image{
     from{
         transform: scale(1.09);
@@ -101,12 +106,21 @@ img{
     background-color: transparent;
     border-radius: 0;
 }
-
+@media screen and (max-width:1367px) {
+ .image{
+    height: 500px;
+ }
+ .bg-right-alt{
+    justify-content: center;
+ }
+ .text-13{
+    font-size: 40px;
+ }
+}
 @media screen and (max-width:1299px) {
     .bg-right{
         transform: rotate(0deg);
-        margin-left: 0px;
-        margin-right: 0px;
+      
     }
     .bg-right-alt{
         transform: rotate(0deg);
@@ -114,14 +128,20 @@ img{
 }
 @media screen and (max-width:991px){
     .bg-right .image{
-        width: 250px;
+        width: auto;
         animation: none;
+    }
+    .bg-right{
+        background: transparent;
+    }
+    .bg-right::before{
+        content: none;
     }
     .bg-right .beans{
         width: 150px;
         animation: none;
     }
-    .bg-right-alt{
+    /* .bg-right-alt{
         height: 40vh;
-    }
+    } */
 }
