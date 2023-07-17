@@ -5,6 +5,8 @@ import coffee2 from './coffe2.png';
 import coffe_w from './coffe_white.png';
 import hand from './hand.png'
 import map from './map.png'
+import menu_cover from './menu_cover.png';
+import mapsmall from './mapsmall.png';
 export{
-    beans,coffee,coffee2,beans2,map,coffe_w,hand
+    beans,coffee,coffee2,beans2,map,coffe_w,hand,menu_cover,mapsmall
 }

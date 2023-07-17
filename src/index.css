@@ -12,7 +12,7 @@
     --bg:rgba(147, 101, 50,.55);
 }
 body{
-    background: #331C00;
+    background: #f6f6f6;
 }
 
 html{
@@ -57,4 +57,7 @@ img{
     top: 45%;
     mix-blend-mode: multiply;
     animation: image2 4s linear infinite alternate;
+}
+.webkit::-webkit-scrollbar{
+    display: none;
 }
