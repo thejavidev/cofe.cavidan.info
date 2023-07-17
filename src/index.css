@@ -61,3 +61,39 @@ img{
 .webkit::-webkit-scrollbar{
     display: none;
 }
+.hot_coffee{
+    position: relative;
+}
+.hot_coffee img,
+.hot_coffee .hot_img{
+    transition: all .3s ease;
+}
+.tr{
+    transition: all .3s ease;
+}
+.tr:hover *{
+    color: #ffff;
+}
+.hot_coffee:hover .hot_img{
+    background: #936532;
+}
+.hot_coffee:hover img{
+    transform:  rotate(10deg);
+}
+.input-control{
+    border: none;
+    outline: none;
+    box-shadow: none;
+   
+    border-bottom: 1px solid #000;
+    background-color: transparent;
+    border-radius: 0;
+}
+.input-control:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid #000;
+    background-color: transparent;
+    border-radius: 0;
+}
