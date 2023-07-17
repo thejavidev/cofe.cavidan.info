@@ -9,7 +9,7 @@ export default {
     extend: {},
     screens: {
       '2xl': {'max': '1479px'},
-      'xl': {'max': '1279px'},
+      'xl': {'max': '1299px'},
       'lg': {'max': '1023px'},
       'md': {'max': '767px'},
       'sm': {'max': '766px'},

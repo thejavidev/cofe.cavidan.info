@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import InputGroup  from 'react-bootstrap/InputGroup';
+import InputGroup from 'react-bootstrap/InputGroup';
 import {
   hot1, mapsmall, menu_cover, cafemocha,
   very_vanilla_latte,
@@ -65,10 +65,10 @@ import {
   dana_jambon,
   dort_peynirli_sandvic,
   fistikli_pasta,
-  kavurmali_tost ,
+  kavurmali_tost,
   limonlu_cheesecake,
   limonlu_kek,
-  macaron ,mermer_kek,
+  macaron, mermer_kek,
   mozaik_pasta,
   peynirli_pogaca,
   safinaz_pogaca,
@@ -76,8 +76,10 @@ import {
 } from '../assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Mousewheel,Navigation } from "swiper";
-import { BsArrowLeft,BsArrowRight } from 'react-icons/Bs';
+import 'swiper/css/navigation';
+
+import { Navigation } from 'swiper/modules';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/Bs';
 const Menu = () => {
   const [search, setSearch] = useState('')
   const fakedata = [
@@ -574,7 +576,7 @@ const Menu = () => {
       name: "Chocolate Macadamia Chiller",
       altname: "Lorem ipsum dolor sit amet."
     },
-    
+
   ]
   const dissertation = [
     {
@@ -696,27 +698,27 @@ const Menu = () => {
       name: "Macaron Hindistan Cevizli",
       altname: "Lorem ipsum dolor sit amet."
     },
-   
+
   ]
 
   return (
     <>
       <div>
         <section>
-          <Container fluid className='pl-[50px] pr-[50px]'>
+          <Container fluid className='pl-[50px] pr-[50px] xl:pl-[20px] xl:pr-[20px]'>
             <Row>
-              <Col lg={2} className=' mt-[30px] ' >
+              <Col xxl={2} xl={3} lg={3} sm={12} className=' mt-[30px] ' >
                 <Form className=''>
                   <InputGroup className=''>
-                    <Form.Control className='input-control ' onChange={(e)=>setSearch(e.target.value)} placeholder='axtar...' />
+                    <Form.Control className='input-control ' onChange={(e) => setSearch(e.target.value)} placeholder='axtar...' />
                   </InputGroup>
                 </Form>
-                <div className="flex flex-col mt-[30px] h-[1000px] overflow-y-scroll webkit">
+                <div className="flex flex-col mt-[30px] h-[1000px] lg:h-[300px] lg:mb-[40px] overflow-y-scroll webkit">
                   {
-                    fakedata && fakedata?.filter((item)=>{
-                      return search?.toLowerCase()=== ''
-                      ? item
-                      :item?.name?.toLowerCase()?.includes(search)
+                    fakedata && fakedata?.filter((item) => {
+                      return search?.toLowerCase() === ''
+                        ? item
+                        : item?.name?.toLowerCase()?.includes(search)
                     })?.map((cur, i) => (
                       <div key={i} className="w-full flex flex-col bg-[#fffaf5] border-2 border-[#B6B6B6] tr hover:bg-[#936532] rounded-md  p-[10px] mb-[20px]">
                         <div className="flex">
@@ -733,34 +735,53 @@ const Menu = () => {
 
                 </div>
               </Col>
-              <Col lg={10} className=''>
+              <Col xxl={10} xl={9} lg={9} sm={12} className=''>
                 <div className="relative">
-                  <img src={menu_cover} className='w-full h-[200px]' alt="" />
+                  <img src={menu_cover} className='w-full h-[200px] md:h-full rounded-md' alt="" />
                 </div>
                 <div className="hot mt-[30px] bg-[#fff] p-[20px] rounded-md">
-                  <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>İsti İçkilər</h2>
+                  <div className="flex w-full justify-between">
+                    <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>İsti İçkilər</h2>
+                    <div className=" flex justify-end ">
+                      <button className="next">
+                        <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
+                      </button>
+                      <button className="prev">
+                        <BsArrowRight className='text-[25px] text-[#936532]' />
+                      </button>
+                    </div>
+                  </div>
+
                   <div className=''>
                     <Swiper
-                      slidesPerView={5}
+
                       spaceBetween={10}
-                      mousewheel={true}
-                      modules={[Mousewheel,Navigation]}
+
+                      modules={[Navigation]}
                       navigation={{
-                          nextEl: ".prev",
-                          prevEl: ".next"
+                        nextEl: ".prev",
+                        prevEl: ".next"
                       }}
                       breakpoints={{
+                        40: {
+                          slidesPerView: 1,
+                        },
+                        340: {
+                          slidesPerView: 1,
+                        },
                         640: {
                           slidesPerView: 2,
 
                         },
                         768: {
-                          slidesPerView: 4,
+                          slidesPerView: 3,
 
                         },
                         1024: {
+                          slidesPerView: 4,
+                        },
+                        1299: {
                           slidesPerView: 5,
-
                         },
                       }}
 
@@ -770,7 +791,7 @@ const Menu = () => {
                         hotdrinks && hotdrinks?.map((cur, i) => (
                           <SwiperSlide key={i}>
                             <div className='flex flex-col w-full cursor-pointer hot_coffee border-2 p-[10px] rounded-md bg-[#fffaf5]' >
-                              <div className='bg-[#ccc]  rounded-md hot_img'>
+                              <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
                                 <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
                               </div>
                               <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
@@ -785,24 +806,47 @@ const Menu = () => {
                   </div>
                 </div>
                 <div className="hot mt-[20px] bg-[#fff] p-[20px] rounded-md">
-                  <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Soyuq İçkilər</h2>
+                  <div className="flex w-full justify-between">
+                    <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Soyuq İçkilər</h2>
+                    <div className=" flex justify-end ">
+                      <button className="next1">
+                        <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
+                      </button>
+                      <button className="prev1">
+                        <BsArrowRight className='text-[25px] text-[#936532]' />
+                      </button>
+                    </div>
+                  </div>
+
                   <div className=''>
                     <Swiper
-                      slidesPerView={5}
+                     
                       spaceBetween={10}
-
+                      modules={[Navigation]}
+                      navigation={{
+                        nextEl: ".prev1",
+                        prevEl: ".next1"
+                      }}
                       breakpoints={{
+                        40: {
+                          slidesPerView: 1,
+                        },
+                        340: {
+                          slidesPerView: 1,
+                        },
                         640: {
                           slidesPerView: 2,
 
                         },
                         768: {
-                          slidesPerView: 4,
+                          slidesPerView: 3,
 
                         },
                         1024: {
+                          slidesPerView: 4,
+                        },
+                        1299: {
                           slidesPerView: 5,
-
                         },
                       }}
 
@@ -812,7 +856,7 @@ const Menu = () => {
                         colddrinks && colddrinks?.map((cur, i) => (
                           <SwiperSlide key={i}>
                             <div className='flex flex-col w-full cursor-pointer hot_coffee border-2 p-[10px] rounded-md bg-[#fffaf5]'>
-                              <div className='bg-[#ccc]  rounded-md hot_img'>
+                              <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
                                 <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
                               </div>
                               <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
@@ -827,24 +871,47 @@ const Menu = () => {
                   </div>
                 </div>
                 <div className="hot mt-[20px] bg-[#fff] p-[20px] rounded-md">
-                  <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Disertlər</h2>
+                  <div className="flex w-full justify-between">
+                    <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Disertlər</h2>
+                    <div className=" flex justify-end ">
+                      <button className="next2">
+                        <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
+                      </button>
+                      <button className="prev2">
+                        <BsArrowRight className='text-[25px] text-[#936532]' />
+                      </button>
+                    </div>
+                  </div>
+
                   <div className=''>
                     <Swiper
-                      slidesPerView={5}
+                   
                       spaceBetween={10}
-
+                      modules={[Navigation]}
+                      navigation={{
+                        nextEl: ".prev2",
+                        prevEl: ".next2"
+                      }}
                       breakpoints={{
+                        40: {
+                          slidesPerView: 1,
+                        },
+                        340: {
+                          slidesPerView: 1,
+                        },
                         640: {
                           slidesPerView: 2,
 
                         },
                         768: {
-                          slidesPerView: 4,
+                          slidesPerView: 3,
 
                         },
                         1024: {
+                          slidesPerView: 4,
+                        },
+                        1299: {
                           slidesPerView: 5,
-
                         },
                       }}
 

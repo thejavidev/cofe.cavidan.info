@@ -68,6 +68,9 @@ img{
 .hot_coffee .hot_img{
     transition: all .3s ease;
 }
+.transition2 {
+    transition: all 0.6s ease;
+}
 .tr{
     transition: all .3s ease;
 }
