@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {
-  hot1, mapsmall, menu_cover, cafemocha,
+ mapsmall, menu_cover, cafemocha,
   very_vanilla_latte,
   white_Chocolate_Mocha,
   classic_hot_chocolate,
@@ -77,7 +77,7 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import { motion as m } from "framer-motion";
 import { Navigation } from 'swiper/modules';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/Bs';
 const Menu = () => {
@@ -703,253 +703,260 @@ const Menu = () => {
 
   return (
     <>
-      <div className='bg-[#f6f6f6] pt-[54px]'>
-        <section>
-          <Container fluid className='pl-[50px] pr-[50px] xl:pl-[20px] xl:pr-[20px]'>
-            <Row>
-              <Col xxl={2} xl={3} lg={3} sm={12} className=' mt-[30px] ' >
-                <Form className=''>
-                  <InputGroup className=''>
-                    <Form.Control className='input-control ' onChange={(e) => setSearch(e.target.value)} placeholder='axtar...' />
-                  </InputGroup>
-                </Form>
-                <div className="flex flex-col mt-[30px] h-[1000px] lg:h-[300px] lg:mb-[40px] overflow-y-scroll webkit">
-                  {
-                    fakedata && fakedata?.filter((item) => {
-                      return search?.toLowerCase() === ''
-                        ? item
-                        : item?.name?.toLowerCase()?.includes(search)
-                    })?.map((cur, i) => (
-                      <div key={i} className="w-full flex flex-col bg-[#fffaf5] border-2 border-[#B6B6B6] tr hover:bg-[#936532] rounded-md  p-[10px] mb-[20px]">
-                        <div className="flex">
-                          <span className='block bg-[#331C00] w-[16px] h-[16px] rounded-[16px]'></span>
-                          <h3 className='capitalize text-[14px] text-[#331C00] font-[600] pl-[15px] '>{cur?.name}</h3>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.85, ease: "easeOut" }}
+      >
+        <div className='bg-[#f6f6f6] pt-[54px]'>
+          <section>
+            <Container fluid className='pl-[50px] pr-[50px] xl:pl-[20px] xl:pr-[20px]'>
+              <Row>
+                <Col xxl={2} xl={3} lg={3} sm={12} className=' mt-[30px] ' >
+                  <Form className=''>
+                    <InputGroup className=''>
+                      <Form.Control className='input-control ' onChange={(e) => setSearch(e.target.value)} placeholder='axtar...' />
+                    </InputGroup>
+                  </Form>
+                  <div className="flex flex-col mt-[30px] h-[1000px] lg:h-[300px] lg:mb-[40px] overflow-y-scroll webkit">
+                    {
+                      fakedata && fakedata?.filter((item) => {
+                        return search?.toLowerCase() === ''
+                          ? item
+                          : item?.name?.toLowerCase()?.includes(search)
+                      })?.map((cur, i) => (
+                        <div key={i} className="w-full flex flex-col bg-[#fffaf5] border-2 border-[#B6B6B6] tr hover:bg-[#936532] rounded-md  p-[10px] mb-[20px]">
+                          <div className="flex">
+                            <span className='block bg-[#331C00] w-[16px] h-[16px] rounded-[16px]'></span>
+                            <h3 className='capitalize text-[14px] text-[#331C00] font-[600] pl-[15px] '>{cur?.name}</h3>
+                          </div>
+                          <div className="flex items-start pt-[10px]">
+                            <img src={cur?.src} className='w-[20px] h-[20px] mt-[5px]' alt="" />
+                            <p className='pl-[10px] text-[#B6B6B6]'>{cur?.adress}</p>
+                          </div>
                         </div>
-                        <div className="flex items-start pt-[10px]">
-                          <img src={cur?.src} className='w-[20px] h-[20px] mt-[5px]' alt="" />
-                          <p className='pl-[10px] text-[#B6B6B6]'>{cur?.adress}</p>
-                        </div>
+                      ))
+                    }
+
+                  </div>
+                </Col>
+                <Col xxl={10} xl={9} lg={9} sm={12} className=''>
+                  <div className="relative">
+                    <img src={menu_cover} className='w-full h-[200px] md:h-full rounded-md' alt="" />
+                  </div>
+                  <div className="hot mt-[30px] bg-[#fff] p-[20px] rounded-md">
+                    <div className="flex w-full justify-between">
+                      <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>İsti İçkilər</h2>
+                      <div className=" flex justify-end ">
+                        <button className="next">
+                          <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
+                        </button>
+                        <button className="prev">
+                          <BsArrowRight className='text-[25px] text-[#936532]' />
+                        </button>
                       </div>
-                    ))
-                  }
+                    </div>
 
-                </div>
-              </Col>
-              <Col xxl={10} xl={9} lg={9} sm={12} className=''>
-                <div className="relative">
-                  <img src={menu_cover} className='w-full h-[200px] md:h-full rounded-md' alt="" />
-                </div>
-                <div className="hot mt-[30px] bg-[#fff] p-[20px] rounded-md">
-                  <div className="flex w-full justify-between">
-                    <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>İsti İçkilər</h2>
-                    <div className=" flex justify-end ">
-                      <button className="next">
-                        <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
-                      </button>
-                      <button className="prev">
-                        <BsArrowRight className='text-[25px] text-[#936532]' />
-                      </button>
+                    <div className=''>
+                      <Swiper
+
+                        spaceBetween={10}
+                        slidesPerView={5}
+                        modules={[Navigation]}
+                        navigation={{
+                          nextEl: ".prev",
+                          prevEl: ".next"
+                        }}
+                        breakpoints={{
+                          40: {
+                            slidesPerView: 1,
+                          },
+                          340: {
+                            slidesPerView: 1,
+                          },
+                          640: {
+                            slidesPerView: 2,
+
+                          },
+                          768: {
+                            slidesPerView: 3,
+
+                          },
+                          1024: {
+                            slidesPerView: 4,
+                          },
+                          1366: {
+                            slidesPerView: 4,
+                          },
+                          1499: {
+                            slidesPerView: 5,
+                          },
+                        }}
+
+                        className="mySwiper "
+                      >
+                        {
+                          hotdrinks && hotdrinks?.map((cur, i) => (
+                            <SwiperSlide key={i}>
+                              <div className='flex flex-col w-full cursor-pointer hot_coffee border-2 p-[10px] rounded-md bg-[#fffaf5]' >
+                                <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
+                                  <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
+                                </div>
+                                <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
+                                <p className='text-[#888888] text-[14px] pt-[6px]'>{cur?.altname}</p>
+                                <p className='text-[#1D1D1D] text-[16px] pt-[6px]'>{cur?.price} &#8380;</p>
+                              </div>
+                            </SwiperSlide>
+                          ))
+                        }
+
+                      </Swiper>
                     </div>
                   </div>
+                  <div className="hot mt-[20px] bg-[#fff] p-[20px] rounded-md">
+                    <div className="flex w-full justify-between">
+                      <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Soyuq İçkilər</h2>
+                      <div className=" flex justify-end ">
+                        <button className="next1">
+                          <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
+                        </button>
+                        <button className="prev1">
+                          <BsArrowRight className='text-[25px] text-[#936532]' />
+                        </button>
+                      </div>
+                    </div>
 
-                  <div className=''>
-                    <Swiper
+                    <div className=''>
+                      <Swiper
+                        slidesPerView={5}
+                        spaceBetween={10}
+                        modules={[Navigation]}
+                        navigation={{
+                          nextEl: ".prev1",
+                          prevEl: ".next1"
+                        }}
+                        breakpoints={{
+                          40: {
+                            slidesPerView: 1,
+                          },
+                          340: {
+                            slidesPerView: 1,
+                          },
+                          640: {
+                            slidesPerView: 2,
 
-                      spaceBetween={10}
-                      slidesPerView={5}
-                      modules={[Navigation]}
-                      navigation={{
-                        nextEl: ".prev",
-                        prevEl: ".next"
-                      }}
-                      breakpoints={{
-                        40: {
-                          slidesPerView: 1,
-                        },
-                        340: {
-                          slidesPerView: 1,
-                        },
-                        640: {
-                          slidesPerView: 2,
+                          },
+                          768: {
+                            slidesPerView: 3,
 
-                        },
-                        768: {
-                          slidesPerView: 3,
+                          },
+                          1024: {
+                            slidesPerView: 4,
+                          },
+                          1366: {
+                            slidesPerView: 4,
+                          },
+                          1499: {
+                            slidesPerView: 5,
+                          },
+                        }}
 
-                        },
-                        1024: {
-                          slidesPerView: 4,
-                        },
-                        1366:{
-                          slidesPerView: 4,
-                        },
-                        1499: {
-                          slidesPerView: 5,
-                        },
-                      }}
-
-                      className="mySwiper "
-                    >
-                      {
-                        hotdrinks && hotdrinks?.map((cur, i) => (
-                          <SwiperSlide key={i}>
-                            <div className='flex flex-col w-full cursor-pointer hot_coffee border-2 p-[10px] rounded-md bg-[#fffaf5]' >
-                              <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
-                                <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
+                        className="mySwiper "
+                      >
+                        {
+                          colddrinks && colddrinks?.map((cur, i) => (
+                            <SwiperSlide key={i}>
+                              <div className='flex flex-col w-full cursor-pointer hot_coffee border-2 p-[10px] rounded-md bg-[#fffaf5]'>
+                                <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
+                                  <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
+                                </div>
+                                <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
+                                <p className='text-[#888888] text-[14px] pt-[6px]'>{cur?.altname}</p>
+                                <p className='text-[#1D1D1D] text-[16px] pt-[6px]'>{cur?.price} &#8380;</p>
                               </div>
-                              <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
-                              <p className='text-[#888888] text-[14px] pt-[6px]'>{cur?.altname}</p>
-                              <p className='text-[#1D1D1D] text-[16px] pt-[6px]'>{cur?.price} &#8380;</p>
-                            </div>
-                          </SwiperSlide>
-                        ))
-                      }
+                            </SwiperSlide>
+                          ))
+                        }
 
-                    </Swiper>
-                  </div>
-                </div>
-                <div className="hot mt-[20px] bg-[#fff] p-[20px] rounded-md">
-                  <div className="flex w-full justify-between">
-                    <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Soyuq İçkilər</h2>
-                    <div className=" flex justify-end ">
-                      <button className="next1">
-                        <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
-                      </button>
-                      <button className="prev1">
-                        <BsArrowRight className='text-[25px] text-[#936532]' />
-                      </button>
+                      </Swiper>
                     </div>
                   </div>
+                  <div className="hot mt-[20px] bg-[#fff] p-[20px] rounded-md">
+                    <div className="flex w-full justify-between">
+                      <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Disertlər</h2>
+                      <div className=" flex justify-end ">
+                        <button className="next2">
+                          <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
+                        </button>
+                        <button className="prev2">
+                          <BsArrowRight className='text-[25px] text-[#936532]' />
+                        </button>
+                      </div>
+                    </div>
 
-                  <div className=''>
-                    <Swiper
-                       slidesPerView={5}
-                      spaceBetween={10}
-                      modules={[Navigation]}
-                      navigation={{
-                        nextEl: ".prev1",
-                        prevEl: ".next1"
-                      }}
-                      breakpoints={{
-                        40: {
-                          slidesPerView: 1,
-                        },
-                        340: {
-                          slidesPerView: 1,
-                        },
-                        640: {
-                          slidesPerView: 2,
+                    <div className=''>
+                      <Swiper
 
-                        },
-                        768: {
-                          slidesPerView: 3,
+                        spaceBetween={10}
+                        slidesPerView={5}
+                        modules={[Navigation]}
+                        navigation={{
+                          nextEl: ".prev2",
+                          prevEl: ".next2"
+                        }}
+                        breakpoints={{
+                          40: {
+                            slidesPerView: 1,
+                          },
+                          340: {
+                            slidesPerView: 1,
+                          },
+                          640: {
+                            slidesPerView: 2,
 
-                        },
-                        1024: {
-                          slidesPerView: 4,
-                        },
-                        1366:{
-                          slidesPerView: 4,
-                        },
-                        1499: {
-                          slidesPerView: 5,
-                        },
-                      }}
+                          },
+                          768: {
+                            slidesPerView: 3,
 
-                      className="mySwiper "
-                    >
-                      {
-                        colddrinks && colddrinks?.map((cur, i) => (
-                          <SwiperSlide key={i}>
-                            <div className='flex flex-col w-full cursor-pointer hot_coffee border-2 p-[10px] rounded-md bg-[#fffaf5]'>
-                              <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
-                                <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
+                          },
+                          1024: {
+                            slidesPerView: 4,
+                          },
+                          1366: {
+                            slidesPerView: 4,
+                          },
+                          1499: {
+                            slidesPerView: 5,
+                          },
+                        }}
+
+                        className="mySwiper "
+                      >
+                        {
+                          dissertation && dissertation?.map((cur, i) => (
+                            <SwiperSlide key={i}>
+                              <div className='flex flex-col w-full cursor-pointer hot_coffee border-2  p-[10px] rounded-md bg-[#fffaf5]'>
+                                <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
+                                  <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
+                                </div>
+                                <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
+                                <p className='text-[#888888] text-[14px] pt-[6px]'>{cur?.altname}</p>
+                                <p className='text-[#1D1D1D] text-[16px] pt-[6px]'>{cur?.price} &#8380;</p>
                               </div>
-                              <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
-                              <p className='text-[#888888] text-[14px] pt-[6px]'>{cur?.altname}</p>
-                              <p className='text-[#1D1D1D] text-[16px] pt-[6px]'>{cur?.price} &#8380;</p>
-                            </div>
-                          </SwiperSlide>
-                        ))
-                      }
+                            </SwiperSlide>
+                          ))
+                        }
 
-                    </Swiper>
-                  </div>
-                </div>
-                <div className="hot mt-[20px] bg-[#fff] p-[20px] rounded-md">
-                  <div className="flex w-full justify-between">
-                    <h2 className='capitalize mb-[20px] font-[500] text-[20px]'>Disertlər</h2>
-                    <div className=" flex justify-end ">
-                      <button className="next2">
-                        <BsArrowLeft className='text-[25px] mr-4 text-[#936532]' />
-                      </button>
-                      <button className="prev2">
-                        <BsArrowRight className='text-[25px] text-[#936532]' />
-                      </button>
+                      </Swiper>
                     </div>
                   </div>
-
-                  <div className=''>
-                    <Swiper
-                   
-                      spaceBetween={10}
-                      slidesPerView={5}
-                      modules={[Navigation]}
-                      navigation={{
-                        nextEl: ".prev2",
-                        prevEl: ".next2"
-                      }}
-                      breakpoints={{
-                        40: {
-                          slidesPerView: 1,
-                        },
-                        340: {
-                          slidesPerView: 1,
-                        },
-                        640: {
-                          slidesPerView: 2,
-
-                        },
-                        768: {
-                          slidesPerView: 3,
-
-                        },
-                        1024: {
-                          slidesPerView: 4,
-                        },
-                        1366:{
-                          slidesPerView: 4,
-                        },
-                        1499: {
-                          slidesPerView: 5,
-                        },
-                      }}
-
-                      className="mySwiper "
-                    >
-                      {
-                        dissertation && dissertation?.map((cur, i) => (
-                          <SwiperSlide key={i}>
-                            <div className='flex flex-col w-full cursor-pointer hot_coffee border-2  p-[10px] rounded-md bg-[#fffaf5]'>
-                              <div className='bg-[#ccc]  rounded-md hot_img overflow-hidden'>
-                                <img src={cur?.src} alt="" className='w-full h-[130px] object-contain ' />
-                              </div>
-                              <h2 className='text-[#1D1D1D] text-[16px] font-[500] pt-[10px]'>{cur?.name}</h2>
-                              <p className='text-[#888888] text-[14px] pt-[6px]'>{cur?.altname}</p>
-                              <p className='text-[#1D1D1D] text-[16px] pt-[6px]'>{cur?.price} &#8380;</p>
-                            </div>
-                          </SwiperSlide>
-                        ))
-                      }
-
-                    </Swiper>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-      </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </div>
+      </m.div>
     </>
   )
 }

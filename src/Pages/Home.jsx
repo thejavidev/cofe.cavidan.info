@@ -5,12 +5,17 @@ import Col from 'react-bootstrap/Col';
 import { beans2, coffe_w, coffee2, hand, map } from '../assets';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import { motion as m } from "framer-motion";
 const Home = () => {
   const [t] = useTranslation("translation");
   return (
     <>
-      <div className=''>
+      <m.div 
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+       transition={{ duration: 0.85, ease: "easeOut" }}
+      >
         <section className="  md:h-full md:pt-[40px]  flex items-center overflow-hidden ">
           <Container fluid>
             <Row className='items-center'>
@@ -89,7 +94,7 @@ const Home = () => {
             </Row>
           </Container>
         </section>
-      </div>
+      </m.div>
     </>
   )
 }
