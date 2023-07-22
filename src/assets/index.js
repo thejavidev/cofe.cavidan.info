@@ -79,7 +79,7 @@ import mozaik_pasta from './food/mozaik_pasta.jpg';
 import peynirli_pogaca from './food/peynirli-pogaca.png';
 import safinaz_pogaca from './food/safinaz-pogaca.png';
 import zeytinli_acma from './food/zeytinli_acma.png';
-
+import header_logo from './header_logo.svg';
 
 export{
     ayvalik_tostu,cikolatali_kek,cikolatali_muffin,cikolatali_cookie,dag_meyveli_pasta,dana_jambon,dort_peynirli_sandvic,
@@ -90,6 +90,7 @@ export{
     macchiatoixed_Berry_Bash_su,macchiatoixed_Berry_Bash_yagsiz_sut,mocha_java_voltage,oregon_chai_latte,prd_stravberry,strawberriesn_Cream,toffee_Nut_Chiller,
     white_Chocolate_Mocha_Chiller,very_Vanilla_Chiller,
     beans,coffee,
+    header_logo,
     coffee2,
     beans2,
     map,
