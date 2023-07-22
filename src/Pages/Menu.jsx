@@ -703,7 +703,7 @@ const Menu = () => {
 
   return (
     <>
-      <div className='bg-[#f6f6f6]'>
+      <div className='bg-[#f6f6f6] pt-[54px]'>
         <section>
           <Container fluid className='pl-[50px] pr-[50px] xl:pl-[20px] xl:pr-[20px]'>
             <Row>

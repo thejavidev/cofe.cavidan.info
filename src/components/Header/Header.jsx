@@ -7,7 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = () => {
   return (
     <>
-      <header className='fixed top-[30px] left-[0] right-[0] z-[999]'>
+      <header className='fixed top-[0px] left-[0] right-[0] z-[999] bg-[#936532] p-[10px]'>
         <Container fluid className='pl-[150px] pr-[150px]'>
           <nav className='flex justify-between items-center w-full'>
             <div className="left">
