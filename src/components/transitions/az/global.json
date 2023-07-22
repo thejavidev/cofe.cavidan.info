@@ -1,3 +1,16 @@
 {
-    "test":"test1-az"
+    "text1":"Gününüzü qəhvə ",
+    "text2":"ilə keçirin",
+    "text3":"Mağazada gözləməyin!",
+    "map":"Xəritə",
+    "text4":"Taky necə işləyir?",
+    "text5":"Çox sadə!",
+    "text6":"Məkanınızı daxil edin",
+    "text7":"Ünvanınızı və ya hara getdiyinizi daxil edin",
+    "text8":"Qəhvə mağazanızı seçin",
+    "text9":"Yalnız yaxınlıqdakı mağazalar deyil, həm də gedəcəyiniz yolda mağazalar tapın! Çoxlu mağazalar, menyular siyahısına baxın",
+    "text10":"Ödəyin və qəhvənizi alın",
+    "text11":"Müxtəlif ödəniş üsullarından seçin. Budur, qəhvənizdən həzz alın!",
+    "header1":"Menü",
+    "header2":"Xəritə"
 }

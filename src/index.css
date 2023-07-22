@@ -37,7 +37,12 @@ html{
 /* img{
     object-fit: cover;
 } */
-
+.hover-item {
+    transition: all .3s ease;
+}
+.hover-item:hover{
+    transform: scale(1.1);
+}
 @keyframes image{
     from{
         transform: scale(1.09);

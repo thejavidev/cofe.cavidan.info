@@ -1,3 +1,16 @@
 {
-    "test":"test1-en"
+    "text1":"Make your day ",
+    "text2":"with coffee",
+    "text3":"Don’t wait in the shop!",
+    "map":"Map",
+    "text4":"How Taky works?",
+    "text5":"So simple!",
+    "text6":"Enter your location",
+    "text7":"Enter you address or where you are going",
+    "text8":"Choose your takeaway shop",
+    "text9":"Find not only shops nearby but also shops on your way to go!Browse the list of many shops, menus",
+    "text10":"Pay and get your drink",
+    "text11":"Choose from different payment methods. That's it, enjoy your coffee!",
+    "header1":"Menu",
+    "header2":"Map"
 }

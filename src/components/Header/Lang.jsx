@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { AiFillCaretDown } from 'react-icons/Ai';
 
 
-const Upper =React.memo(({toggle, switchLang})=>{
+const Lang =React.memo(({toggle, switchLang})=>{
 
     useEffect(()=>{
         if(localStorage.getItem("i18nextLng") ==='tr-TR' || localStorage.getItem("i18nextLng") ==='TR-TR' || localStorage.getItem("i18nextLng") ==='TR' || localStorage.getItem("i18nextLng") ==='tr' ){
@@ -26,11 +26,11 @@ const Upper =React.memo(({toggle, switchLang})=>{
         <div className='relative  text-black px-2 ml-5'>
             <div onClick={toggle} className='flex items-center cursor-pointer'>
                 <button className='text-[#fff] uppercase text-[16px]'>{localStorage.getItem("i18nextLng") ? localStorage.getItem("i18nextLng") : "az"}</button>
-                <AiFillCaretDown className='text-[#DE0733] ml-2 text-[20px]'  />
+                <AiFillCaretDown className='text-[#331C00] ml-2 text-[20px]'  />
             </div>
             {switchLang}
         </div>
     )
 })
 
-export default Upper
+export default Lang
